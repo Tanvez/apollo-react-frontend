@@ -1,11 +1,21 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./styles.css";
+import Home from "./components/Home";
+import Redirect from "./components/Redirect";
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+	return (
+		<Router>
+			<div>
+				<Switch>
+					<Route path="/:slug" children={<Redirect />} />
+					<Route path="/">
+						<Home />
+					</Route>
+				</Switch>
+			</div>
+		</Router>
+	);
 }
