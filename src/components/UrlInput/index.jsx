@@ -3,6 +3,8 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import isURL from "isurl";
+import { CREATE_URL } from "../../graphqlApi";
+import { useMutation } from "@apollo/client";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -20,6 +22,7 @@ export default function UrlInput() {
 	const classes = useStyles();
 	const [url, setUrl] = React.useState("");
 	const [slug, setSlug] = React.useState("");
+
 	const handleChange = (event) => {
 		setUrl(event.target.value);
 	};
@@ -28,7 +31,11 @@ export default function UrlInput() {
 		setSlug(event.target.value);
 	};
 
-	const handleSubmit = () => console.log("is url?", isURL(url));
+	// const [createShortUrl] = useMutation(CREATE_URL, {
+
+	// })
+
+	const handleSubmit = () => console.log("TODO ADD SUBMIT");
 
 	// TODO HANDLE CHECKS FOR ISURL
 	// const checkUrlInput = () => {

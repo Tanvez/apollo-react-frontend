@@ -9,3 +9,13 @@ export const GET_URL = gql`
 		}
 	}
 `;
+
+export const CREATE_URL = gql`
+	mutation CreateShortUrl($slug: String!, $url: String!) {
+		createShortUrl(slug: $slug, url: $url) {
+			id
+			url
+			slug
+		}
+	}
+`;
